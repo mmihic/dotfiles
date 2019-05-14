@@ -1,4 +1,6 @@
 execute pathogen#infect()
+set guifont=Monaco:h13
+set lines=50 columns=200
 syntax on
 filetype plugin indent on
 let g:terraform_align=1
