@@ -1,5 +1,15 @@
 #!/bin/sh
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+
+brew install macvim go git bash-completion
+
+
+mkdir ~/tmp
+mkdir ~/bin
+cp trim ~/bin
+
 ln -sf $PWD/.vimrc $HOME/.vimrc
 
 mkdir -p $HOME/bin
@@ -11,5 +21,8 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 git clone https://github.com/tpope/vim-sensible.git ~/.vim/bundle/vim-sensible
+
+PWD=$( pwd )
+echo "source ${PWD}/.bash_profile" >> ~/.bashrc
 
 
