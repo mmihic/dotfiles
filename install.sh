@@ -6,7 +6,10 @@ brew_install() {
   brew list $1 >> /dev/null || brew install $1
 }
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+ 
 [[ -z $(which brew)  ]] && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
+
 
 brew_install macvim
 brew_install go
@@ -15,7 +18,7 @@ brew_install jq
 brew_install bash-completion
 
 # Install goimports
-[[ ! -f $HOME/go/bin/goimports ]] && go get golang.org/x/tools/cmd/goimports 
+[[ ! -f $HOME/go/bin/goimports ]] && go install golang.org/x/tools/cmd/goimports@latest 
 
 # Link to helper scripts
 [[ ! -d $HOME/tmp ]] && mkdir ~/tmp 
