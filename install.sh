@@ -36,6 +36,6 @@ git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"
 
 # Source local bash_profile
 PWD=$( pwd )
-echo "source ${PWD}/.bash_profile" >> ~/.bashrc
+echo "source ${PWD}/.bash_profile" >> ~/.profile
 
 
